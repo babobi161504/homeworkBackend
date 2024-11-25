@@ -3,29 +3,29 @@ const routes = require("../routes.js");
 const { taskControllers } = require("../../controllers/index.js");
 
 const taskRouter = {
-  run(req, res) {
+  run(request, response) {
     routerMethods.get(
-      req,
-      res,
-      routes.task.getTask.value,
-      taskControllers.handleGetTasksById
+      request,
+      response,
+      routes.tasks.getTask.value,
+      taskControllers.handleGetTasksByToken
     );
     routerMethods.post(
-      req,
-      res,
-      routes.task.addTask.value,
+      request,
+      response,
+      routes.tasks.addTask.value,
       taskControllers.handleAddTask
     );
     routerMethods.put(
-      req,
-      res,
-      routes.task.updateTask.value,
+      request,
+      response,
+      routes.tasks.updateTask.value,
       taskControllers.handleUpdateTask
     );
     routerMethods.delete(
-      req,
-      res,
-      routes.task.deleteTask.value,
+      request,
+      response,
+      routes.tasks.deleteTask.value,
       taskControllers.handleDeleteTaskById
     );
   },

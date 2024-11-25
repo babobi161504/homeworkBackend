@@ -1,25 +1,26 @@
-const { httpMethods } = require("../utils/constants");
+const { httpMethods } = require("../utils/constant");
+
 const routerMethods = {
-  get: function (req, res, path, callback) {
-    if (path === req.url && req.method === httpMethods.GET) {
-      callback(req, res);
+  get: function (request, response, path, callback) {
+    if (path === request.url && request.method === httpMethods.GET) {
+      callback(request, response);
     }
   },
-  post: function (req, res, path, callback) {
-    if (path === req.url && req.method === httpMethods.POST) {
-      console.log(callback);
-      callback(req, res);
+  post: function (request, response, path, callback) {
+    if (path === request.url && request.method === httpMethods.POST) {
+      callback(request, response);
     }
   },
-  put: function (req, res, path, callback) {
-    if (path === req.url && req.method === httpMethods.PUT) {
-      callback(req, res);
+  put: function (request, response, path, callback) {
+    if (path === request.url && request.method === httpMethods.PUT) {
+      callback(request, response);
     }
   },
-  delete: function (req, res, path, callback) {
-    if (path === req.url && req.method === httpMethods.DELETE) {
-      callback(req, res);
+  delete: function (request, response, path, callback) {
+    if (path === request.url && request.method === httpMethods.DELETE) {
+      callback(request, response);
     }
   },
 };
+
 module.exports = routerMethods;
