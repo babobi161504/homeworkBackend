@@ -12,17 +12,20 @@ module.exports = {
       value: "/get-task",
     },
 
+
     deleteTask: {
       value: "/delete-task",
-    },
+    },    
   },
+
+
 
   user: {
     login: {
       value: "/login",
     },
     register: {
-      value: "/register",
-    },
+      value:"/register"
+    }
   },
 };
