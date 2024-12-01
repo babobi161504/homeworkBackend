@@ -3,6 +3,7 @@ const router = require("./router");
 const cors = require("cors");
 const hostname = "127.0.0.1";
 const port = 3000;
+const { httpStatusCodes } = require("./utils/constant");
 const server = createServer((request, response) => {
   // Set CORS headers
   response.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins, or specify a particular origin
@@ -17,7 +18,7 @@ const server = createServer((request, response) => {
 
   // Handle preflight requests
   if (request.method === "OPTIONS") {
-    response.writeHead(204); // No content
+    response.writeHead(httpStatusCodes.NO_CONTENT); // No content
     response.end();
     return;
   }
